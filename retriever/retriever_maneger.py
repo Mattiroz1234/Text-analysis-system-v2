@@ -1,8 +1,9 @@
 from dotenv import load_dotenv
-from DAL.dal import DAL
+from dal.dal import DAL
 from publisher import Publisher
 import os
 import time
+from utils import Utils
 
 load_dotenv()
 database_url = os.getenv('IRANIAN_MONGO_URL', 'mongodb+srv://IRGC_NEW:iran135@cluster0.6ycjkak.mongodb.net/')
@@ -21,6 +22,9 @@ def retrieve():
                 antisemitic_data.append(tweet)
             else:
                 not_antisemitic_data.append(tweet)
+
+        antisemitic_data = Utils.correct_the_id(antisemitic_data)
+        not_antisemitic_data =Utils.correct_the_id(not_antisemitic_data)
 
         pub = Publisher()
         pub.send_to_topics({"result": antisemitic_data}, {"result": not_antisemitic_data})
