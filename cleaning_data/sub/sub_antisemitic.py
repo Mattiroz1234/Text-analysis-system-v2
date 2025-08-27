@@ -1,6 +1,8 @@
 from kafka import KafkaConsumer
+from cleaning_data.manager import Manager
 import json
 
+manager = Manager('enriched_preprocessed_tweets_antisemitic')
 
 consumer = KafkaConsumer(
     'raw_tweets_antisemitic',
@@ -15,4 +17,5 @@ consumer = KafkaConsumer(
 print("raw_tweets_antisemitic מקשיב להודעות...")
 
 for message in consumer:
+    manager.start_the_cleaning_process(message['result'])
     print("התקבלה הודעה:", message.value)
