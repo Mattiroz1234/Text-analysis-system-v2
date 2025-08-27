@@ -2,7 +2,7 @@ from kafka import KafkaConsumer
 from cleaning_data.manager import Manager
 import json
 
-manager = Manager('enriched_preprocessed_tweets_not_antisemitic')
+manager = Manager()
 
 consumer = KafkaConsumer(
     'raw_tweets_not_antisemitic',
