@@ -10,9 +10,9 @@ class Publisher:
         )
 
     def send_to_topics(self, antisemitic_data, not_antisemitic_data):
-            self.producer.send('antisemitic', antisemitic_data)
+            self.producer.send('raw_tweets_antisemitic', antisemitic_data)
 
-            self.producer.send('not_antisemitic', not_antisemitic_data)
+            self.producer.send('raw_tweets_not_antisemitic', not_antisemitic_data)
 
             self.producer.flush()
 
