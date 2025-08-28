@@ -1,5 +1,5 @@
-from Enricher.additional_features.additionalfeatures import AdditionalFeatures
-from Enricher.enricher_pub.enricher_producer import Producer
+from additional_features.additionalfeatures import AdditionalFeatures
+from enricher_pub.enricher_producer import Producer
 
 
 class Manager:
