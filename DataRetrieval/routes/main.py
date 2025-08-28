@@ -1,5 +1,5 @@
 import uvicorn
-from routes import app
+from routes.routes import app
 
 app = app
 

@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
-from .retrieval_DAL.DAL import DAL
-from DataRetrieval.utils import Utils
+from retrieval_DAL.DAL import DAL
+from utils import Utils
 
 
 class ManagerRetrieval:
