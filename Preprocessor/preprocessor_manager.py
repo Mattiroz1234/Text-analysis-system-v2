@@ -1,11 +1,11 @@
-from additional_features.additional_features.additional_features import Additional_features
-from additional_features.pub.producer import Producer
+from Preprocessor.additional_features.additionalfeatures import AdditionalFeatures
+from Preprocessor.preprocessor_pub.preprocessor_producer import Producer
 
 
 class Manager:
 
     def __init__(self):
-        self.additional = Additional_features()
+        self.additional = AdditionalFeatures()
         self.producer = Producer()
         self.data = None
         self.antisemietic = False

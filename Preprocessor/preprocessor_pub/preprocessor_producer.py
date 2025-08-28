@@ -18,7 +18,7 @@ class Producer:
 
     def send_message(self, topic, message):
         self.producer.send(topic, message)
-        print("נשלח:",message, "to", topic)
+        print("sent:",message, "to", topic)
 
     def close_conn(self):
         self.producer.close()

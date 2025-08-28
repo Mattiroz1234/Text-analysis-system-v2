@@ -2,12 +2,11 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import os
 import spacy
-from date_spacy import find_dates
 
 nltk.download('vader_lexicon', quiet=True)
 
 
-class Additional_features:
+class AdditionalFeatures:
     def __init__(self):
         nltk_dir = "/tmp/nltk_data"
         os.makedirs(nltk_dir, exist_ok=True)
@@ -26,6 +25,7 @@ class Additional_features:
                 return "neutral"
             else:
                 return "negative"
+
 
     def check_if_weapons_exists(self, text):
         weapons = []
