@@ -13,5 +13,7 @@ consumer = KafkaConsumer(
 )
 
 for message in consumer:
-    dal.consume_messages(message)
+    print(message.value)
+    for i in message.value['result']:
+        dal.consume_messages(i)
 

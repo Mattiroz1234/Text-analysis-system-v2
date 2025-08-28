@@ -37,6 +37,7 @@ class Manager:
 
     def change_name_column_text(self,row):
         row['original_text'] = row.pop('text')
+        row['id'] = row.pop('_id')
         return row
 
     def send_data_cleaning_to_mongodb(self):

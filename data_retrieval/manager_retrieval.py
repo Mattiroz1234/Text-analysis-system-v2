@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from .dal.dal import DAL
+from data_retrieval.utils import Utils
 
 
 class Manager_retrieval:
@@ -18,4 +19,5 @@ class Manager_retrieval:
         else:
             collection = self.collection_not_antisemitic
         result = self.dal.get_all(collection)
+        result = Utils.correct_the_id(result)
         return result
