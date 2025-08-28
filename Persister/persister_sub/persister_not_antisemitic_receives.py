@@ -1,6 +1,6 @@
 from kafka import KafkaConsumer
 import json
-from save_date.dal.save_DAL import DAL
+from Persister.persister_DAL.save_DAL import DAL
 
 dal = DAL("tweets_not_antisemitic")
 
