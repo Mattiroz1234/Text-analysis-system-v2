@@ -16,7 +16,7 @@ nltk.download('omw-1.4')
 nltk.download('averaged_perceptron_tagger_eng')
 
 
-class Cleaning_data:
+class CleaningData:
 
     def __init__(self):
         pass
@@ -30,7 +30,6 @@ class Cleaning_data:
         return clean_text
 
     def removing_special_characters(self, text):
-
         res = re.sub(r'[^a-zA-Z0-9]', ' ', text)
         return res
 
