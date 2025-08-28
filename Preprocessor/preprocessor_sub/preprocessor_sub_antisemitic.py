@@ -5,7 +5,7 @@ import json
 manager = Manager()
 
 consumer = KafkaConsumer(
-    'preprocessed_tweets_antisemitic',
+    'raw_tweets_antisemitic',
     bootstrap_servers='localhost:9092',
     api_version=(0, 11, 5),
     group_id='my-group',
@@ -14,7 +14,7 @@ consumer = KafkaConsumer(
     request_timeout_ms=100000
 )
 
-print("preprocessed_tweets_antisemitic listening ...")
+print("raw_tweets_antisemitic listening...")
 
 for message in consumer:
     print("an antisemitic message was received:", message.value)
