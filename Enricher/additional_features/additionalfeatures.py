@@ -2,7 +2,6 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import os
 import spacy
-from date_spacy import find_dates
 
 nltk.download('vader_lexicon', quiet=True)
 
