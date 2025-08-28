@@ -14,8 +14,7 @@ class Producer:
                                     )
 
     def send_message(self, topic, message):
-        if not self.producer:
-            self.conn()
+        self.conn()
         self.producer.send(topic, message)
         print("send:",message, "to", topic)
         self.close_conn()

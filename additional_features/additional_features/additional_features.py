@@ -15,7 +15,7 @@ class Additional_features:
         nltk.download('vader_lexicon', download_dir=nltk_dir, quiet=True)
         self.analyzer = SentimentIntensityAnalyzer()
         self.weapons = None
-        self.name_file_weapons = "additional_features/data_weapons/weapon_list.txt"
+        self.name_file_weapons = "../additional_features/data_weapons/weapon_list.txt"
 
 
     def find_text_sentiment(self, text):

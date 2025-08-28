@@ -14,7 +14,7 @@ consumer = KafkaConsumer(
     request_timeout_ms=100000
 )
 
-print("raw_tweets_antisemitic מקשיב להודעות...")
+print("preprocessed_tweets_antisemitic מקשיב להודעות...")
 
 for message in consumer:
     print(" באנטישמי התקבלה הודעה:", message.value)

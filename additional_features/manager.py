@@ -1,5 +1,5 @@
-from additional_features.additional_features import Additional_features
-from pub.producer import Producer
+from additional_features.additional_features.additional_features import Additional_features
+from additional_features.pub.producer import Producer
 
 
 class Manager:
@@ -12,10 +12,12 @@ class Manager:
 
     def start_the_cleaning_process(self, data_list : list):
         self.data = data_list
-        if self.data[0]["antisemietic"] == 1:
+        if self.data[0]["Antisemitic"] == 1:
             self.antisemietic = True
+        else:
+            self.antisemietic = False
         for i in self.data:
-            text = i["clean_data"]
+            text = i["clean_text"]
             i["sentiment"] = self.additional.find_text_sentiment(text)
             i["weapons_detected"] = self.additional.check_if_weapons_exists(text)
             i["relevant_timestamp"] = self.additional.is_date(text)
