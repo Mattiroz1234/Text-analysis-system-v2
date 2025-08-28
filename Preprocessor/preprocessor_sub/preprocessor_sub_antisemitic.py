@@ -1,12 +1,12 @@
 from kafka import KafkaConsumer
-from Preprocessor.preprocessor_manager import Manager
+from preprocessor_manager import Manager
 import json
 
 manager = Manager()
 
 consumer = KafkaConsumer(
     'raw_tweets_antisemitic',
-    bootstrap_servers='localhost:9092',
+    bootstrap_servers='text-analiysis-system-v2:9092',
     api_version=(0, 11, 5),
     group_id='my-group',
     auto_offset_reset='earliest',

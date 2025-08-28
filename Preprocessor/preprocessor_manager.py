@@ -1,5 +1,5 @@
-from Preprocessor.cleaning.cleaning_data import CleaningData
-from Preprocessor.preprocessor_pub.preprocessor_producer import Producer
+from cleaning.cleaning_data import CleaningData
+from preprocessor_pub.preprocessor_producer import Producer
 
 class Manager:
 
