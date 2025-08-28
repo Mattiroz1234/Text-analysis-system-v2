@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
-from data_retrieval.manager_retrieval import Manager_retrieval
+from DataRetrieval.manager_retrieval import ManagerRetrieval
 
 app = FastAPI()
-manager = Manager_retrieval()
+manager = ManagerRetrieval()
 
 @app.get("/")
 def get_root():

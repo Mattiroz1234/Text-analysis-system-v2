@@ -1,6 +1,4 @@
-#Lib's
 import uvicorn
-#Classes
 from routes import app
 
 app = app
