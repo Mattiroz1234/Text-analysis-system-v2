@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from dal.dal import DAL
+from ReceivesDAL.dal import DAL
 from publisher import Publisher
 import os
 import time

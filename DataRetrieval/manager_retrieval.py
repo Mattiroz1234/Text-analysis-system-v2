@@ -1,10 +1,10 @@
 import os
 from dotenv import load_dotenv
-from .dal.dal import DAL
-from data_retrieval.utils import Utils
+from .retrieval_DAL.DAL import DAL
+from DataRetrieval.utils import Utils
 
 
-class Manager_retrieval:
+class ManagerRetrieval:
     def __init__(self):
         load_dotenv()
         database_url = os.getenv('MONGO_URL', 'mongodb://localhost:27017')
