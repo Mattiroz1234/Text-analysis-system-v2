@@ -1,11 +1,10 @@
-from bson import ObjectId
-from cleaning_data.cleaning.cleaning_data import Cleaning_data
+from cleaning_data.cleaning.cleaning_data import CleaningData
 from cleaning_data.pub.producer import Producer
 
 class Manager:
 
     def __init__(self):
-        self.cleaning = Cleaning_data()
+        self.cleaning = CleaningData()
         self.producer = Producer()
         self.data_cleaning = []
         self.data = None
@@ -38,11 +37,11 @@ class Manager:
         await self.producer.send_message(self.get_topic_to_send_antisemitic(), self.data_cleaning)
         await self.producer.send_message(self.get_topic_to_send_not_antisemitic(), self.data_cleaning)
 
-
-    def get_topic_to_send_antisemitic(self):
+    @staticmethod
+    def get_topic_to_send_antisemitic():
         return 'preprocessed_tweets_antisemitic'
 
-
-    def get_topic_to_send_not_antisemitic(self):
+    @staticmethod
+    def get_topic_to_send_not_antisemitic():
         return 'preprocessed_tweets_not_antisemitic'
 

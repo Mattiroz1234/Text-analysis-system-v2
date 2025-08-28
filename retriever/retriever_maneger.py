@@ -12,13 +12,13 @@ collection = os.getenv('IRANIAN_COLLECTION', 'tweets')
 
 def retrieve():
     con = DAL(database_url, db, collection)
-    antisemitic_data = []
-    not_antisemitic_data = []
 
     while True:
+        antisemitic_data = []
+        not_antisemitic_data = []
         tweets = con.get_next_100_oldest()
         for tweet in tweets:
-            if tweet["Antisemitic"] == 0:
+            if tweet["Antisemitic"] == 1:
                 antisemitic_data.append(tweet)
             else:
                 not_antisemitic_data.append(tweet)
