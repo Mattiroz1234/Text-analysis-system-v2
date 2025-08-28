@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from DataRetrieval.manager_retrieval import ManagerRetrieval
+from manager_retrieval import ManagerRetrieval
 
 app = FastAPI()
 manager = ManagerRetrieval()
